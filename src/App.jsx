@@ -3,6 +3,10 @@ import { Header } from './components/Header'
 import { Hero } from './components/Hero'
 import { About } from './components/About'
 import ReactLenis from 'lenis/react'
+import { CompanyInfo } from './components/CompanyInfo'
+import { Stack } from './components/Stack'
+import { Projects } from './components/Projects'
+
 
 function App() {
 
@@ -13,6 +17,9 @@ function App() {
         <Header />
         <Hero />
         <About />
+        <CompanyInfo />
+        <Stack />
+        <Projects />
       </div>
     </ReactLenis>
   )

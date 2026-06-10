@@ -129,7 +129,7 @@ export const Hero = () => {
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
                 ref={heroRef}
-                className="min-h-screen w-full flex justify-center items-end relative overflow-hidden">
+                className="min-h-screen w-full flex lg:flex-row flex-col justify-center items-end relative overflow-hidden">
 
                 {/* Image container */}
                 <div ref={imgWrapRef} className='relative w-full h-[98dvh]'>
@@ -137,12 +137,12 @@ export const Hero = () => {
                         ref={mainImgRef}
                         src={mainImg}
                         alt=""
-                        className='absolute h-dvh w-full left-1/2 -translate-x-1/2 bottom-0 pointer-evets-none' />
+                        className='absolute h-dvh w-full left-1/2 -translate-x-1/2 bottom-0 pointer-events-none object-cover lg:object-fill' />
                     <img
                         ref={hoverImgRef}
                         src={hoverImg}
                         alt=""
-                        className='absolute h-dvh w-full left-1/2 -translate-x-1/2 bottom-0'
+                        className='absolute h-dvh w-full left-1/2 -translate-x-1/2 bottom-0 object-cover lg:object-fill'
                         style={{
                             "--x": '50%',
                             "--y": '50%',
@@ -156,34 +156,34 @@ export const Hero = () => {
 
                 </div>
 
-                {/*Cusrsor following Glowing div */}
-                <div ref={glowingRef} className='absolute w-[300px] h-[300px] top-0 left-0 bg-blue-500 blur-[180px] mix-blend-screen rounded-full pointer-events-none opacity-0'></div>
+                {/*Cursor following Glowing div */}
+                <div ref={glowingRef} className='absolute w-[300px] h-[300px] top-0 left-0 bg-blue-500 blur-[180px] mix-blend-screen rounded-full pointer-events-none opacity-0 hidden lg:block'></div>
 
                 {/* Bottom Glowing DIV */}
                 <div
-                    className='absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white to-tranparent'></div>
+                    className='absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white to-transparent'></div>
 
                 {/* hero content */}
-                <div className='absolute top-0 left-0 w-full h-full p-40 mt-30 grid grid-cols-2'>
-                    <div className='flex flex-col items-left'>
-                        <h1 ref={topToBottomRef} className='text-6xl font-bold tracking-wider'>Hey, I'm</h1>
-                        <h1 ref={topToBottomRef} className='text-5xl mt-3 bg-gradient-to-r from-black to-[#949494] text-transparent bg-clip-text w-fit'>Shashinda</h1>
-                        <span ref={bottomToTopRef} className='text-sm mt-3 text-[#5F5F5F] w-[50%]'>Software Engineering Undergraduate building scalable web applications, leading engineering teams, and shipping production-grade software.</span>
-                        <button ref={bottomToTopRef} className='bg-black text-white py-4 px-7 mt-3 w-[30%] cursor-pointer hover:bg-gray-800'>View Work</button>
-                        <div ref={bottomToTopRef} className='mt-3'>
-                            <a href="#"><StackIcon name="github"  className='text-black cursor-pointer h-10 w-10'/></a>
-                            <a href="#"><StackIcon name="github"  className='text-black cursor-pointer h-10 w-10 mx-7'/></a>
+                <div className='lg:absolute relative top-0 left-0 w-full h-full p-5 sm:p-10 md:p-20 lg:p-40 pt-32 lg:pt-0 lg:mt-30 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-0 overflow-y-auto lg:overflow-visible overflow-x-hidden no-scrollbar'>
+                    <div className='flex flex-col items-center lg:items-start text-center lg:text-left z-10 lg:mt-20'>
+                        <h1 ref={topToBottomRef} className='text-4xl md:text-5xl lg:text-6xl font-bold tracking-wider'>Hey, I'm</h1>
+                        <h1 ref={topToBottomRef} className='text-3xl md:text-4xl lg:text-5xl mt-2 lg:mt-3 bg-gradient-to-r from-black to-[#949494] text-transparent bg-clip-text w-fit'>Shashinda</h1>
+                        <span ref={bottomToTopRef} className='text-xs md:text-sm mt-3 lg:mt-5 text-[#5F5F5F] w-full md:w-[80%] lg:w-[70%] xl:w-[60%] 2xl:w-[50%]'>Software Engineering Undergraduate building scalable web applications, leading engineering teams, and shipping production-grade software.</span>
+                        <button ref={bottomToTopRef} className='bg-black text-white py-3 md:py-4 px-7 mt-6 lg:mt-8 w-full sm:w-auto cursor-pointer hover:bg-gray-800 transition-colors'>View Work</button>
+                        <div ref={bottomToTopRef} className='mt-6 lg:mt-8 flex justify-center lg:justify-start gap-5 lg:gap-7'>
+                            <a href="#"><StackIcon name="github"  className='text-black cursor-pointer h-8 w-8 md:h-10 md:w-10'/></a>
+                            <a href="#"><StackIcon name="github"  className='text-black cursor-pointer h-8 w-8 md:h-10 md:w-10'/></a>
                         </div>
                     </div>
-                    <div className='pl-60'>
-                        <h1 ref={topToBottomRef} className='text-6xl font-bold tracking-wider'>Full-Stack</h1>
-                        <h1 ref={topToBottomRef} className='text-5xl  mt-3'>Web Developer</h1>
-                        <button ref={bottomToTopRef} className='flex gap-3 items-center mt-3 bg-black py-2 px-10 cursor-pointer'>
+                    <div className='pl-0 lg:pl-65 flex flex-col items-center lg:items-start text-center lg:text-left z-10 lg:mt-35'>
+                        <h1 ref={topToBottomRef} className='text-4xl md:text-5xl lg:text-6xl font-bold tracking-wider'>Full-Stack</h1>
+                        <h1 ref={topToBottomRef} className='text-3xl md:text-4xl lg:text-5xl mt-2 lg:mt-3'>Web Developer</h1>
+                        <button ref={bottomToTopRef} className='flex gap-3 items-center mt-6 lg:mt-8 bg-black py-2 md:py-3 px-6 md:px-10 cursor-pointer transition-colors'>
                             <div className='h-3 w-3 relative'>
                                 <span className='w-full h-full rounded-full animate-ping absolute top-0 left-0 inline-flex bg-[#08FF39] opacity-75'></span>
                                 <span className='absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 inline-flex h-2 w-2 rounded-full bg-[#08FF39]'></span>
                             </div>
-                            <span className='text-white'>Available for work</span>
+                            <span className='text-white text-sm md:text-base'>Available for work</span>
                         </button>
                     </div>
                 </div>
